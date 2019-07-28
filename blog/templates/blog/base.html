@@ -8,8 +8,8 @@
     {% load static %}
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-          integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'blog/main.css' %}">
 
     {% if page_title %}
@@ -27,7 +27,7 @@
 </head>
 <body>
 <header class="site-header">
-    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel">
         <div class="container">
             <a class="navbar-brand mr-4" href="{% url 'blog-home' %}">Django Blog</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
@@ -42,6 +42,7 @@
                 <!-- Navbar Right Side -->
                 <div class="navbar-nav mr-auto">
                     {% if user.is_authenticated %}
+                        <a class="nav-item nav-link" href="{% url 'post-create' %}">New post</a>
                         <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
                         <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
                     {% else %}
