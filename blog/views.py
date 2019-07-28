@@ -17,6 +17,8 @@ class PostListView(ListView):
     template_name = 'blog/home.html'
     context_object_name = 'posts'
     ordering = ['-post_date']
+    paginate_by = 5
+#     todo profile posts in profile page. look up at 11 lesson
 
 
 class PostDetailView(DetailView):
