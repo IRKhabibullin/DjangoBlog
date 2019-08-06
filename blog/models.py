@@ -6,6 +6,7 @@ from django.urls import reverse
 class Post(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
+    # qweasd
     post_date = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, null=True, on_delete=models.DO_NOTHING)
 
